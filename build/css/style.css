@@ -1,0 +1,66 @@
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	background: #ffffff;
+	color: #333333;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-family: Arial, Roboto, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+	line-height: 150%;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 22px 0;
+	margin: 2.2rem 0;
+	font-weight: bold;
+}
+
+h1 a,
+h1 a:hover,
+h2 a,
+h2 a:hover,
+h3 a,
+h3 a:hover,
+h4 a,
+h4 a:hover,
+h5 a,
+h5 a:hover,
+h6 a,
+h6 a:hover {
+	color: #333333;
+	text-decoration: none;
+}
+
+a {
+	color: #e05921;
+}
+
+a:hover {
+	color: #e78157;
+}
+
+a .img-link:hover {
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+
+ul {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+

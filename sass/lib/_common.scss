@@ -1,0 +1,56 @@
+// Common
+html {
+  font-size: 62.5%; //base fontsize 10px
+  height: 100%;
+}
+
+body {
+    height: 100%;
+    font-family: Arial, Roboto, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;  // '游ゴシック', YuGothic,
+    font-size: 1.4rem;
+    line-height: 150%;
+    background: $bg;
+    color: $base;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 2.2rem 0;
+  font-weight: bold;
+    a,a:hover {
+        color: $base;
+        text-decoration: none;
+    }
+}
+a {
+  color: $link;
+  transition: .8s;
+  &:hover {
+    color: lighten($link, 12%);
+  }
+  .img-link:hover {
+    opacity: .8;
+  }
+}
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// mixin
+// ====================================
+@mixin clearfix() {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: " ";
+    }
+    &:after {
+        clear: both;
+    }
+}
