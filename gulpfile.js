@@ -10,20 +10,30 @@ var cmq = require('gulp-combine-media-queries');
 var csscomb = require('gulp-csscomb');
 
 // Sass
-
 gulp.task('sass', function () {
     gulp.src('sass/**/*.scss')
-        .pipe(sass({errLogToConsole: true})) // Keep running gulp even though occurred compile error
+        .pipe(sass({
+          outputStyle: 'expanded'
+        }).on('error', sass.logError)) // Keep running gulp even though occurred compile error
         .pipe(pleeease({
-            fallbacks: { autoprefixer: ['last 2 versions'] },  //ベンダープレフィックス
+            autoprefixer: { browsers: ['last 2 versions'] },
             minifier: false
         }))
         .pipe(gulp.dest('build/css'))
         .pipe(reload({stream:true}));
 });
 
-// Js-concat-uglify
+// Combine media queries
+gulp.task('cmq', function () {
+  gulp.src('build/css/*.css')
+    .pipe(cmq({
+      log: true
+    }))
+    .pipe(csscomb())
+    .pipe(gulp.dest('build/css'));
+});
 
+// Js-concat-uglify
 gulp.task('js', function() {
     gulp.src(['js/*.js'])
         .pipe(concat('scripts.js'))
@@ -33,35 +43,22 @@ gulp.task('js', function() {
 });
 
 // Static server
-
 gulp.task('browser-sync', function() {
     browserSync({
         server: {
-            baseDir: "./build/", //　Target directory
-            // index  : "index.html" // index file
+            baseDir: "build/", //　Target directory
+            index  : "index.html" // index file
         }
     });
 });
 
-// Combine media queries
-
-gulp.task('cmq', function () {
-  gulp.src('build/css/style.css')
-    .pipe(cmq({
-      log: true
-    }))
-    .pipe(csscomb())
-    .pipe(gulp.dest('build/css'));
-});
-
 // Reload all browsers
-
 gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-// Task for `gulp` command
 
+// Task for `gulp` command
 gulp.task('default',['browser-sync'], function() {
     gulp.watch('sass/**/*.scss',['sass']);
     gulp.watch('js/*.js',['js']);
