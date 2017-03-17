@@ -16,7 +16,7 @@ $accent-02: #cf1228;  // theme color2
 
 
 // Smartphone - PC
-$mq-xs: '(mix-width: 480px)'; // Media Queries - Smartphone
+$mq-xs: '(max-width: 480px)'; // Media Queries - Smartphone
 
 $mq-sm: '(min-width: 768px)'; // Media Queries - Small tablet & smartphone
 
