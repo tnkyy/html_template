@@ -18,15 +18,15 @@ $accent-02: #cf1228;  // theme color2
 // Smartphone - PC
 $mq-xs: '(max-width: 480px)'; // Media Queries - Smartphone
 
-$mq-sm: '(min-width: 768px)'; // Media Queries - Small tablet & smartphone
+$mq-sm: '(min-width: 600px)'; // Media Queries - Small tablet & smartphone
 
-$mq-md: '(min-width: 1024px)'; // Media Queries - Tablet
+$mq-md: '(min-width: 960px)'; // Media Queries - Tablet
 
 $mq-lg: '(min-width: 1240px)'; // Media queries - Large display
 
 // Media Queries - Retina display
 $at2x: "(-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx)"; // All retina devices
 
-$at2x-tablet: "(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 768px),(min-resolution: 2dppx) and (min-device-width: 768px)"; // Larger than iPad display
+$at2x-tablet: "(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 600px),(min-resolution: 2dppx) and (min-device-width: 600px)"; // Larger than iPad display
 
-$at2x-pc: "(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 1025px),(min-resolution: 2dppx) and (min-device-width: 1025px)"; // Larger than PC display (1025px)
+$at2x-pc: "(-webkit-min-device-pixel-ratio: 2) and (min-device-width: 960px),(min-resolution: 2dppx) and (min-device-width: 960px)"; // Larger than PC display (1025px)
